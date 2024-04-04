@@ -2,6 +2,8 @@
 
 This repository contains code for the paper "Leveraging neural networks and edge detection for better UAV localization".
 
+Paper : [arxiv_publication]([https://github.com/yourusername](https://arxiv.org/submit/5505657/view))
+
 ## Method Overview
 
 ![Method overview](https://github.com/TheoDpPro/uav-localization/blob/main/figures/overview_method.PNG)
