@@ -4,7 +4,7 @@ This repository contains code for the paper "Leveraging neural networks and edge
 
 ## Method Overview
 
-![Method Image](figures/overview_method.png)
+![Mehtod overview](/figures/overview_method.png)
 
 ## Getting Started
 
