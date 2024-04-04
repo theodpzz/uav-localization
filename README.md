@@ -4,7 +4,7 @@ This repository contains code for the paper "Leveraging neural networks and edge
 
 ## Method Overview
 
-![Method overview](https://github.com/tograh/testrepository/3DTest.png](https://github.com/TheoDpPro/uav-localization/blob/main/figures/overview_method.PNG)
+![Method overview](https://github.com/TheoDpPro/uav-localization/blob/main/figures/overview_method.PNG)
 
 ## Getting Started
 
