@@ -23,7 +23,7 @@ git clone https://github.com/TheoDpPro/uav-localization.git
 Make sure you have Python 3 installed. Then, install the dependencies using:
 
 ```bash
-git clone https://github.com/TheoDpPro/uav-localization.git
+pip install -r requirements.txt
 ```
 
 ### Training
