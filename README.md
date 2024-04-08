@@ -42,6 +42,7 @@ Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gab
 
 This project is based on the work by Di Piazza et al. If you use this code in your research, please cite the following paper:
 
+```bash
 @inproceedings{author2024,
   author    = {Di Piazza Theo, Meinhardt-Llopis Enric, Facciolo Gabriele, Bascle Benedicte, Abgrall Corentin and Devaux Jean-Clement},
   title     = {Leveraging neural networks and edge detection for better UAV localization},
@@ -49,3 +50,4 @@ This project is based on the work by Di Piazza et al. If you use this code in yo
   year      = {2024},
   organization = {IEEE},
 }
+```
