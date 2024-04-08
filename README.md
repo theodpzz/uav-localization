@@ -6,8 +6,6 @@ Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/submit/5505
 
 ### Method Overview
 
-![Method overview](https://github.com/TheoDpPro/uav-localization/blob/main/figures/overview_method.PNG)
-
 <img src="https://github.com/TheoDpPro/uav-localization/blob/main/figures/overview_method.PNG" alt="Method overview" width="600">
 
 ### Getting Started
