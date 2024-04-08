@@ -38,7 +38,7 @@ python train.py
 
 Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gabriele, MEINHARDT-LLOPIS Enric.
 
-### CITATION
+### Citation
 
 This project is based on the work by Di Piazza et al. If you use this code in your research, please cite the following paper:
 
