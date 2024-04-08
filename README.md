@@ -43,7 +43,7 @@ Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gab
 This project is based on the work by Di Piazza et al. If you use this code in your research, please cite the following paper:
 
 ```BibTeX
-@inproceedings{author2024,
+@inproceedings{dipiazza2024uavloc,
   author    = {Di Piazza Theo, Meinhardt-Llopis Enric, Facciolo Gabriele, Bascle Benedicte, Abgrall Corentin and Devaux Jean-Clement},
   title     = {Leveraging neural networks and edge detection for better UAV localization},
   booktitle = {Proceedings of the IEEE International Geoscience and Remote Sensing Symposium (IGARSS)},
