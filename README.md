@@ -36,7 +36,7 @@ python train.py
 
 ### Acknowledgment
 
-Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gabriele, MEINHARDT-LLOPIS Enric.
+Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gabriele and MEINHARDT-LLOPIS Enric.
 
 ### Citation
 
