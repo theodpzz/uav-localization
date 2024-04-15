@@ -23,9 +23,9 @@ def compute_lowe_and_error(train_loader, valid_loader, train_embeddings, train_n
   # find 2 closest tiles
   indices = np.argsort(similarities.flatten())[-2:]
   values = similarities[indices]
-
+  
   # compute lowe's ratio
-  lowe_ratio = np.max(values) / np.min(values)
+  lowe_ratio = values[-1] /  values[-2]
 
   # compute euclidean error distance
   matching_tile_name = train_names[indices[-1]]
