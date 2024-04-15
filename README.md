@@ -37,7 +37,7 @@ python train.py
 #### Data
 
 Example data is available in example-data folder.
-train.csv, test.csv contains filename and coordinates of each tile.
+train.csv, test.csv contain filenames and coordinates of each tile.
 Below the structure of the data folder for n reference tiles and m uav views.
 
 ```bash
