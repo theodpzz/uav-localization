@@ -1,1 +1,5 @@
-
+cv2
+numpy
+pandas
+scikit-learn
+torch
