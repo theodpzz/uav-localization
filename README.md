@@ -51,7 +51,7 @@ Below the structure of the data folder for n reference tiles and m uav views.
 │   ├── uav_view_name_1.npy
 │   ├── uav_view_name_2.npy
 │   ├── ...
-│   ├── uav_view_name_m.npy
+│   └── uav_view_name_m.npy
 │
 ├── train.csv
 └── test.csv
