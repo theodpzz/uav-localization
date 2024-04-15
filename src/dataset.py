@@ -1,3 +1,9 @@
+"""
+Custom dataset
+
+Author: DI PIAZZA Theo
+"""
+
 import os
 import torch
 import numpy as np
