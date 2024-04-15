@@ -34,6 +34,29 @@ To train the model, run the following command:
 python train.py
 ```
 
+#### Data
+
+Example data is available in example-data folder.
+train.csv, test.csv contains filename and coordinates of each tile.
+Below the structure of the data folder for n reference tiles and m uav views.
+
+```bash
+├── train/
+│   ├── reference_tile_1.npy
+│   ├── reference_tile_2.npy
+│   ├── ...
+│   └── reference_tile_n.npy
+│
+├── test/
+│   ├── uav_view_name_1.npy
+│   ├── uav_view_name_2.npy
+│   ├── ...
+│   ├── uav_view_name_m.npy
+│
+├── train.csv
+└── test.csv
+```
+
 ### Acknowledgment
 
 Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gabriele and MEINHARDT-LLOPIS Enric.
