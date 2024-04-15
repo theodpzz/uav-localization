@@ -1,3 +1,11 @@
+"""
+AutoEncoder model implemented with PyTorch.
+
+Architecture inspired from Bianchi et al. 2021
+
+Author: DI PIAZZA Theo
+"""
+
 import torch
 import torch.nn as nn
 
