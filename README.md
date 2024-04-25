@@ -1,5 +1,4 @@
 # Leveraging neural networks and edge detection for better UAV localization 🚁🗺️📍
-
 Official implementation for the paper "Leveraging neural networks and edge detection for better UAV localization".
 
 Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/submit/5505657/view)
