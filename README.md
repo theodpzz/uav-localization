@@ -1,4 +1,4 @@
-### Leveraging neural networks and edge detection for better UAV localization 🚁🗺️📍
+# Leveraging neural networks and edge detection for better UAV localization 🚁🗺️📍
 
 Official implementation for the paper "Leveraging neural networks and edge detection for better UAV localization".
 
