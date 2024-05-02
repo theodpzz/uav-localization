@@ -94,7 +94,7 @@ def main():
   # data
   train_dataset = DatasetUAV(path_images_train, path_labels_train)
   train_loader  = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
-  valid_dataset = DatasetUAV(path_images_train, path_labels_train)
+  valid_dataset = DatasetUAV(path_images_test, path_labels_test)
   valid_loader  = DataLoader(dataset=valid_dataset, batch_size=1, shuffle=False)
 
   # load model
