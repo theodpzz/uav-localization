@@ -12,6 +12,9 @@ Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06
 
 ## Getting Started
 
+> [!TIP]
+> This section outlines the main steps to discover the code.
+
 ### Clone the Repository
 
 To clone this repository, use the following command:
