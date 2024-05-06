@@ -3,6 +3,9 @@ Official implementation for the paper "Leveraging neural networks and edge detec
 
 Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06207)
 
+[!WARNING]  
+Code is still in development.
+
 ### Method Overview
 
 <img src="https://github.com/TheoDpPro/uav-localization/blob/main/figures/overview_method_final.png" alt="Method overview" width="600">
