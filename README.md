@@ -6,13 +6,13 @@ Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06
 > [!WARNING]  
 > Code is still in development.
 
-### Method Overview
+## Method Overview
 
 <img src="https://github.com/theodpzz/uav-localization/blob/main/figures/overview_method_final.png" alt="Method overview" width="600">
 
-### Getting Started
+## Getting Started
 
-#### Clone the Repository
+### Clone the Repository
 
 To clone this repository, use the following command:
 
@@ -20,7 +20,7 @@ To clone this repository, use the following command:
 git clone https://github.com/TheoDpPro/uav-localization.git
 ```
 
-#### Installation
+### Installation
 
 Make sure you have Python 3 installed. Then, install the dependencies using:
 
@@ -28,7 +28,7 @@ Make sure you have Python 3 installed. Then, install the dependencies using:
 pip install -r requirements.txt
 ```
 
-#### Training
+### Training
 
 To train the model, run the following command:
 
@@ -36,7 +36,7 @@ To train the model, run the following command:
 python train.py
 ```
 
-#### Data
+### Data
 
 Example data is available in example-data folder.
 
@@ -63,11 +63,11 @@ Below the structure of the data folder for n reference tiles and m uav views.
 └── test.csv
 ```
 
-### Acknowledgment
+## Acknowledgment
 
 Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gabriele and MEINHARDT-LLOPIS Enric.
 
-### Citation
+## Citation
 
 This project is based on the work by Di Piazza et al. If you use this code in your research, please cite the following paper:
 
