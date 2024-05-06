@@ -3,10 +3,8 @@ Official implementation for the paper "Leveraging neural networks and edge detec
 
 Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06207)
 
-```bash
-[!WARNING]  
-Code is still in development.
-```
+> [!WARNING]  
+> Code is still in development.
 
 ### Method Overview
 
