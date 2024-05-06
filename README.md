@@ -8,9 +8,9 @@ Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06
 
 ## Method Overview
 
-Offline, the contours of the RGB reference images are extracted to obtain images with a single channel. An AutoEncoder is trained on these images for a pixel-by-pixel reconstruction task. Positions, embeddings and the frozen encoder are loaded onto the drone.
+Offline, the edges of the RGB reference images are extracted to generate single-channel images. An AutoEncoder is then trained on these images for a task of pixel-by-pixel reconstruction. Subsequently, positions, embeddings, and the frozen encoder are transferred onto the drone.
 
-Online, the view of the drone is extracted from a camera located underneath the drone. The contours of the RGB image are extracted and passed to the encoder, which produces an embedding. This embedding is compared, by cosine similarity, to all the embeddings of the reference images, and the position is deduced from the position of the reference image with the highest similarity.
+Online, the drone's view is captured through a camera positioned beneath it. The outlines of the RGB image are then extracted and forwarded to the encoder, which generates an embedding. This embedding is subsequently compared, using cosine similarity, to all embeddings derived from the reference images. The drone's position is then inferred based on the position of the reference image with the highest similarity score.
 
 <img src="https://github.com/theodpzz/uav-localization/blob/main/figures/overview_method_final.png" alt="Method overview" width="600">
 
