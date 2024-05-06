@@ -8,7 +8,7 @@ Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06
 
 ## Method Overview
 
-Offline, the contours of the RGB reference images are extracted to obtain images with a single channel. An AutoEncoder is trained on these images for a pixel-by-pixel reconstruction task. Positions, embeddings and the frozen encoder are taken on board the drone.
+Offline, the contours of the RGB reference images are extracted to obtain images with a single channel. An AutoEncoder is trained on these images for a pixel-by-pixel reconstruction task. Positions, embeddings and the frozen encoder are loaded on board the drone.
 
 Online, the view of the drone is extracted from a camera located underneath the drone. The contours of the RGB image are extracted and passed to the encoder, which produces an embedding. This embedding is compared, by cosine similarity, to all the embeddings of the reference images, and the position is deduced from the position of the reference image with the highest similarity.
 
