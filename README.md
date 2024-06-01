@@ -3,9 +3,6 @@ Official implementation for the paper "Leveraging neural networks and edge detec
 
 Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06207)
 
-> [!WARNING]  
-> Code is still in development.
-
 ## Method Overview
 
 Offline, the edges of the RGB reference images are extracted to generate single-channel images. An AutoEncoder is then trained on these images for a task of pixel-by-pixel reconstruction. Subsequently, positions, embeddings, and the frozen encoder are transferred onto the drone.
@@ -15,9 +12,6 @@ Online, the drone's view is captured through a camera positioned beneath it. The
 <img src="https://github.com/theodpzz/uav-localization/blob/main/figures/overview_method_final.png" alt="Method overview" width="600">
 
 ## Getting Started
-
-> [!TIP]
-> This section outlines the main steps to discover the code.
 
 ### Clone the Repository
 
