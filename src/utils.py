@@ -1,5 +1,6 @@
 """
 Usefull functions to train the model
+
 Author: DI PIAZZA Theo
 """
 import math
@@ -7,7 +8,8 @@ import numpy as np
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-def compute_lowe_and_error(train_loader, valid_loader, train_embeddings, train_names, embedding):
+def compute_lowe_and_error(train_loader, test_loader, train_embeddings, train_names, 
+                           test_embedding, test_tile_name):
   """
   For a given embedding, computes similarity with all embeddings from train set
   Returns lowe's ratio and error (euclidean distance)
@@ -15,27 +17,31 @@ def compute_lowe_and_error(train_loader, valid_loader, train_embeddings, train_n
 
   # correct format
   train_embeddings = np.array(train_embeddings)
-  embedding = np.array([embedding.detach().cpu().tolist()[0]])
+  test_embedding   = np.array([test_embedding.detach().cpu().tolist()[0]])
 
   # compute cosine similarity
-  similarities = cosine_similarity(train_embeddings, embedding)
+  similarities = cosine_similarity(train_embeddings, test_embedding)
 
   # find 2 closest tiles
+  print(similarities.flatten(), type(similarities))
   indices = np.argsort(similarities.flatten())[-2:]
+  print(f'similarities: {similarities}')
   values = similarities[indices]
   
   # compute lowe's ratio
   lowe_ratio = values[-1] /  values[-2]
+  print(f'values: {values}')
+  print(f'lowe_ratio: {lowe_ratio}')
 
   # compute euclidean error distance
   matching_tile_name = train_names[indices[-1]]
 
   # read coordinates
   x_match, y_match = train_loader.dataset.labels[train_loader.dataset.labels['name'] == matching_tile_name][['x', 'y']].values[0]
-  x_val, y_val = valid_loader.dataset.labels[valid_loader.dataset.labels['name'] == validation_tile_name[0]][['x', 'y']].values[0]
+  x_test, y_test   = test_loader.dataset.labels[test_loader.dataset.labels['name'] == test_tile_name[0]][['x', 'y']].values[0]
 
   # compute euclidean distance
-  error = math.sqrt((x_match - x_val)**2 + (y_match - y_val)**2)
+  error = math.sqrt((x_match - x_test)**2 + (y_match - y_test)**2)
 
   return lowe_ratio, error
 
@@ -60,7 +66,7 @@ def compute_metrics(lowe_ratios, errors, error_threshold, lowe_threshold):
 
   return accuracy, accuracy_kept
 
-def get_localization_accuracy(model, train_loader, valid_loader, error_threshold=50, lowe_threshold=1.13):
+def get_localization_accuracy(model, train_loader, test_loader, device, error_threshold=50, lowe_threshold=1.13):
   """
   From model and train, test dataloaders
   Returns the localization accuracy
@@ -89,15 +95,16 @@ def get_localization_accuracy(model, train_loader, valid_loader, error_threshold
     train_embeddings += embeddings.detach().cpu().tolist()
 
   # iterate over validation dataloader
-  for i, data in enumerate(valid_loader):
-    edges, validation_tile_name = data
+  for i, data in enumerate(test_loader):
+    edges, test_tile_name = data
     edges = edges.to(device)
 
     # forward pass to get embeddings
-    embeddings = model(edges, return_only_embedding=True)
+    test_embedding = model(edges, return_only_embedding=True)
 
     # compute lowe ratio and cosine similarity
-    lowe_ratio, error = compute_lowe_and_error(dataloader, dataloader, train_embeddings, train_names, embeddings)
+    lowe_ratio, error = compute_lowe_and_error(train_loader, test_loader, train_embeddings, train_names, 
+                                               test_embedding, test_tile_name)
 
     lowe_ratios.append(lowe_ratio)
     errors.append(error)
