@@ -9,9 +9,9 @@ import torch.optim as optim
 
 from torch.utils.data import DataLoader
 
-#from src.model import AutoEncoder
-#from src.dataset import DatasetUAV
-#from src.utils import get_localization_accuracy
+from src.model import AutoEncoder
+from src.dataset import DatasetUAV
+from src.utils import get_localization_accuracy
 
 def validate(model, valid_loader, device, criterion):
 
