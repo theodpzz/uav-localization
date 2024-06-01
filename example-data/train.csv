@@ -1,2 +1,4 @@
 name,x,y
-tile1.npy,48.8534,2.3488
+reference_tile_1.npy,48.8534,2.3883
+reference_tile_2.npy,47.3212,2.4532
+reference_tile_3.npy,39.1203,2.1201
