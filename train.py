@@ -3,12 +3,15 @@ Main script to train the AutoEncoder
 
 Author: DI PIAZZA Theo
 """
+import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from src.model import AutoEncoder
-from src.dataset import DatasetUAV
-from src.utils import get_localization_accuracy
+from torch.utils.data import DataLoader
+
+#from src.model import AutoEncoder
+#from src.dataset import DatasetUAV
+#from src.utils import get_localization_accuracy
 
 def validate(model, valid_loader, device, criterion):
 
@@ -34,12 +37,12 @@ def validate(model, valid_loader, device, criterion):
 
   return np.mean(loss_validation)
 
-def train(model, train_loader, valid_loader, device, optimizer, criterion, epochs=10):
+def train(model, train_loader, test_loader, device, optimizer, criterion, epochs=10):
 
   # train step
   model.train()
 
-  loss_train, loss_valid = [], []
+  loss_train, loss_test = [], []
 
   # iterate over epochs
   for epoch in range(epochs):
@@ -47,7 +50,7 @@ def train(model, train_loader, valid_loader, device, optimizer, criterion, epoch
     loss_train_epoch = 0
 
     # iterate over dataloader
-    for i, data in enumerate(dataloader):
+    for i, data in enumerate(train_loader):
 
       # get data
       edges, _ = data
@@ -67,15 +70,15 @@ def train(model, train_loader, valid_loader, device, optimizer, criterion, epoch
       optimizer.step()
 
     # validation step
-    loss_valid_epoch = validate(model, valid_loader, device, criterion)
+    loss_test_epoch = validate(model, test_loader, device, criterion)
 
     # save logs
     loss_train.append(loss_train_epoch)
-    loss_valid.append(loss_valid_epoch)
-    print(f'In epoch: {epoch} - Losses - train: {loss_train_epoch:.2f} - validation: {loss_valid_epoch:.2f}')
+    loss_test.append(loss_test_epoch)
+    print(f'[EPOCH] {epoch} - [Losses] : train: {loss_train_epoch:.2f} | validation: {loss_test_epoch:.2f}')
 
   # compute localization accuracy
-  accuracy, accuracy_kept = get_localization_accuracy(model, train_loader, valid_loader)
+  accuracy, accuracy_kept = get_localization_accuracy(model, train_loader, test_loader, device)
 
   return accuracy, accuracy_kept
 
@@ -86,6 +89,7 @@ def main():
   path_images_test  = 'example-data/test'
   path_labels_train = 'example-data/train.csv'
   path_labels_test  = 'example-data/test.csv'
+  
   batch_size = 2
 
   # device
@@ -93,9 +97,9 @@ def main():
 
   # data
   train_dataset = DatasetUAV(path_images_train, path_labels_train)
-  train_loader  = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
-  valid_dataset = DatasetUAV(path_images_test, path_labels_test)
-  valid_loader  = DataLoader(dataset=valid_dataset, batch_size=1, shuffle=False)
+  train_loader  = DataLoader(dataset = train_dataset, batch_size = batch_size, shuffle = True)
+  test_dataset  = DatasetUAV(path_images_test, path_labels_test)
+  test_loader   = DataLoader(dataset = test_dataset, batch_size = 1, shuffle = False)
 
   # load model
   model = AutoEncoder()
@@ -106,8 +110,5 @@ def main():
   criterion = nn.MSELoss()
 
   # train and validate the model
-  accuracy, accuracy_kept = train(model, train_loader, valid_loader, device, optimizer, criterion)
-  print(f'Localization Accuracy: {accuracy:.2f} - Accuracy after Lowe ratio filter: {accuracy_kept:.2f} !')
-
-if __name__ == "__main__":
-    main()
+  accuracy, accuracy_kept = train(model, train_loader, test_loader, device, optimizer, criterion)
+  print(f'\nLocalization Accuracy: {accuracy:.2f} - Accuracy after Lowe ratio filter: {accuracy_kept:.2f} !')
