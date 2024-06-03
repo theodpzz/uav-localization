@@ -18,7 +18,7 @@ Online, the drone's view is captured through a camera positioned beneath it. The
 To clone this repository, use the following command:
 
 ```bash
-git clone https://github.com/TheoDpPro/uav-localization.git
+git clone https://github.com/theodpzz/uav-localization.git
 ```
 
 ### Installation
