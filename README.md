@@ -71,7 +71,7 @@ Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gab
 ## Citation
 
 > [!IMPORTANT]  
-> This project is based on the work by Di Piazza et al. If you use this code in your research, please cite the following paper:
+> This project is based on the work by Di Piazza et al. If you use this code in your research, we would appreciate the following citation:
 
 ```BibTeX
 @inproceedings{dipiazza2024uavloc,
