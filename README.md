@@ -64,10 +64,6 @@ Below the structure of the data folder for n reference tiles and m uav views.
 └── test.csv
 ```
 
-## Acknowledgment
-
-Thanks to ABGRALL Corentin, BASCLE Benedicte, DAVAUX Jean-Clément, FACCIOLO Gabriele and MEINHARDT-LLOPIS Enric.
-
 ## Citation
 
 > [!IMPORTANT]  
