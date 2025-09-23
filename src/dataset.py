@@ -8,6 +8,7 @@ import torch
 import numpy as np
 import pandas as pd
 
+from cv2 import cv2
 from torch.utils.data import Dataset
 
 class DatasetUAV(Dataset):
