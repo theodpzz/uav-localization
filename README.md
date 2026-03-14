@@ -1,7 +1,12 @@
-### Leveraging neural networks and edge detection for better UAV localization 🚁🗺️📍
-Official implementation for the paper "Leveraging neural networks and edge detection for better UAV localization".
+<p align="center">
+  <h2 align="center">Leveraging neural networks and edge detection for better UAV localization 🚁🗺️📍</h2>
+  <h4 align="center"><b>IGARSS 2024</b></h4>
+  <p align="center">
+    <a href="http://arxiv.org/pdf/2404.06207"><img alt='arXiv' src="https://img.shields.io/badge/arXiv-2404.06207-b31b1b.svg"></a>
+  </p>
+</p>
 
-Paper accepted to IGARSS 2024 : [arXiv submission](https://arxiv.org/abs/2404.06207)
+---
 
 ## Method Overview
 
@@ -10,6 +15,8 @@ Offline, the edges of the RGB reference images are extracted to generate single-
 Online, the drone's view is captured through a camera positioned beneath it. The outlines of the RGB image are then extracted and forwarded to the encoder, which generates an embedding. This embedding is subsequently compared, using cosine similarity, to all embeddings derived from the reference images. The drone's position is then inferred based on the position of the reference image with the highest similarity score.
 
 <img src="https://github.com/theodpzz/uav-localization/blob/main/figures/overview_method_final.png" alt="Method overview" width="600">
+
+---
 
 ## Getting Started
 
@@ -63,6 +70,8 @@ Below the structure of the data folder for n reference tiles and m uav views.
 ├── train.csv
 └── test.csv
 ```
+
+---
 
 ## Citation
 
